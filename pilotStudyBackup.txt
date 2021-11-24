@@ -1,0 +1,1294 @@
+{
+    "fmoahxygp3": {
+        "approved": "2021-10-07 04:49:53+00:00",
+        "bonus": "Sent successfully",
+        "botSetup": {
+            "initialState": {
+                "belief": [
+                    1.5,
+                    1.5
+                ],
+                "isInvestee": false,
+                "metaParamsEstimations": {
+                    "alpha": [
+                        48.52196090880605,
+                        7.9607525639316705,
+                        15.3279868584562
+                    ],
+                    "discountFactor": 0.8,
+                    "lookAhead": {
+                        "estimated": 9,
+                        "prior": {
+                            "ps": [
+                                0.07142857142857142,
+                                0.14285714285714285,
+                                0.35714285714285715,
+                                0.35714285714285715,
+                                0.07142857142857142
+                            ],
+                            "vs": [
+                                0,
+                                1,
+                                2,
+                                3,
+                                4
+                            ]
+                        },
+                        "simplify": false
+                    }
+                },
+                "trust": 0.5000000000000001
+            },
+            "params": {
+                "goalCoeffs": [
+                    0.5,
+                    0.5
+                ],
+                "metaParams": {
+                    "alpha": 1000,
+                    "discountFactor": 0.8,
+                    "lookAhead": 2
+                },
+                "usesHeuristics": true
+            }
+        },
+        "comprehension": [
+            684
+        ],
+        "condition": {
+            "botCoeffs": 1,
+            "horizonDisclosed": false,
+            "prior": true,
+            "role": "investee"
+        },
+        "demographic": {
+            "age": 1,
+            "education": 1,
+            "gender": 2,
+            "robot": 3
+        },
+        "earned": 11,
+        "feedback": "",
+        "gameSetup": {
+            "endowments": {
+                "investee": 0,
+                "investor": 4
+            },
+            "horizon": 7,
+            "k": 2,
+            "role": "investee",
+            "unitToDollarRatio": 20
+        },
+        "history": [
+            {
+                "invested": 4,
+                "returned": 1,
+                "took": 12
+            },
+            {
+                "invested": 1,
+                "returned": 0,
+                "took": 12
+            },
+            {
+                "invested": 1,
+                "returned": 0,
+                "took": 15
+            },
+            {
+                "invested": 0,
+                "returned": 0,
+                "took": 19
+            },
+            {
+                "invested": 0,
+                "returned": 0,
+                "took": 14
+            },
+            {
+                "invested": 0,
+                "returned": 0,
+                "took": 13
+            },
+            {
+                "invested": 0,
+                "returned": 0,
+                "took": 15
+            }
+        ],
+        "postQuestionnaire": {
+            "human": 4,
+            "trustChange": 0,
+            "trustChangeGeneral": 0
+        },
+        "preQuestionnaire": {
+            "altruism": 3,
+            "lottery1": 0,
+            "lottery2": 2,
+            "lottery3": 2,
+            "moneyRequest": 11,
+            "trust": 3
+        },
+        "requestToken": "qq1fdvfzds6fuo1099om",
+        "timestamps": {
+            "comprehension": [
+                "2021-10-07 04:39:45+00:00"
+            ],
+            "finished": "2021-10-07 04:46:00+00:00",
+            "gotSetup": "2021-10-07 04:36:27+00:00"
+        },
+        "workerID": "A2IG18D6M0GNUZ"
+    },
+    "ileeuw2iin": {
+        "botSetup": {
+            "initialState": {
+                "belief": [
+                    1,
+                    1
+                ],
+                "isInvestee": false,
+                "metaParamsEstimations": {
+                    "alpha": [
+                        38.873998608071986,
+                        32.366281472070945,
+                        31.220757493550177
+                    ],
+                    "discountFactor": 0.8,
+                    "lookAhead": {
+                        "prior": {
+                            "ps": [
+                                0.07142857142857142,
+                                0.14285714285714285,
+                                0.35714285714285715,
+                                0.35714285714285715,
+                                0.07142857142857142
+                            ],
+                            "vs": [
+                                0,
+                                1,
+                                2,
+                                3,
+                                4
+                            ]
+                        },
+                        "simplify": false
+                    }
+                },
+                "trust": 0.5
+            },
+            "params": {
+                "goalCoeffs": [
+                    0.8,
+                    0.2
+                ],
+                "metaParams": {
+                    "alpha": 1000,
+                    "discountFactor": 0.8,
+                    "lookAhead": 2
+                },
+                "usesHeuristics": true
+            }
+        },
+        "comprehension": [
+            644,
+            643
+        ],
+        "condition": {
+            "botCoeffs": 2,
+            "horizonDisclosed": false,
+            "prior": false,
+            "role": "investee"
+        },
+        "demographic": {
+            "age": 1,
+            "education": 2,
+            "gender": 2,
+            "robot": 3
+        },
+        "gameSetup": {
+            "endowments": {
+                "investee": 0,
+                "investor": 4
+            },
+            "horizon": 7,
+            "k": 2,
+            "role": "investee",
+            "unitToDollarRatio": 20
+        },
+        "preQuestionnaire": {
+            "altruism": 4,
+            "lottery1": 2,
+            "lottery2": 2,
+            "lottery3": 0,
+            "moneyRequest": 20,
+            "trust": 5
+        },
+        "timestamps": {
+            "comprehension": [
+                "2021-10-06 23:44:33+00:00",
+                "2021-10-06 23:45:01+00:00"
+            ],
+            "gotSetup": "2021-10-06 23:40:57+00:00"
+        }
+    },
+    "iy8v14d86t": {
+        "approved": "2021-10-06 22:39:52+00:00",
+        "bonus": "Sent successfully",
+        "botSetup": {
+            "initialState": {
+                "belief": [
+                    1.25,
+                    1.75
+                ],
+                "isInvestee": false,
+                "metaParamsEstimations": {
+                    "alpha": [
+                        6.197105119866383,
+                        13.088964759650477,
+                        7.262570024576874
+                    ],
+                    "discountFactor": 0.8,
+                    "lookAhead": {
+                        "estimated": 0,
+                        "prior": {
+                            "ps": [
+                                0.07142857142857142,
+                                0.14285714285714285,
+                                0.35714285714285715,
+                                0.35714285714285715,
+                                0.07142857142857142
+                            ],
+                            "vs": [
+                                0,
+                                1,
+                                2,
+                                3,
+                                4
+                            ]
+                        },
+                        "simplify": false
+                    }
+                },
+                "trust": 0.7000000000000001
+            },
+            "params": {
+                "goalCoeffs": [
+                    0.5,
+                    0.5
+                ],
+                "metaParams": {
+                    "alpha": 1000,
+                    "discountFactor": 0.8,
+                    "lookAhead": 2
+                },
+                "usesHeuristics": true
+            }
+        },
+        "comprehension": [
+            684
+        ],
+        "condition": {
+            "botCoeffs": 1,
+            "horizonDisclosed": true,
+            "prior": true,
+            "role": "investee"
+        },
+        "demographic": {
+            "age": 1,
+            "education": 1,
+            "gender": 2,
+            "robot": 1
+        },
+        "earned": 21,
+        "feedback": "i like this ",
+        "gameSetup": {
+            "endowments": {
+                "investee": 0,
+                "investor": 4
+            },
+            "horizon": 7,
+            "k": 2,
+            "role": "investee",
+            "unitToDollarRatio": 20
+        },
+        "history": [
+            {
+                "invested": 4,
+                "returned": 2,
+                "took": 13
+            },
+            {
+                "invested": 3,
+                "returned": 6,
+                "took": 13
+            },
+            {
+                "invested": 3,
+                "returned": 3,
+                "took": 15
+            },
+            {
+                "invested": 3,
+                "returned": 4,
+                "took": 24
+            },
+            {
+                "invested": 3,
+                "returned": 2,
+                "took": 13
+            },
+            {
+                "invested": 3,
+                "returned": 3,
+                "took": 14
+            },
+            {
+                "invested": 3,
+                "returned": 3,
+                "took": 17
+            }
+        ],
+        "postQuestionnaire": {
+            "human": 4,
+            "trustChange": 2,
+            "trustChangeGeneral": 2
+        },
+        "preQuestionnaire": {
+            "altruism": 4,
+            "lottery1": 2,
+            "lottery2": 0,
+            "lottery3": 2,
+            "moneyRequest": 20,
+            "trust": 4
+        },
+        "requestToken": "1ibbhkpsigxw3mpyxdgc",
+        "timestamps": {
+            "comprehension": [
+                "2021-10-06 22:31:30+00:00"
+            ],
+            "finished": "2021-10-06 22:37:02+00:00",
+            "gotSetup": "2021-10-06 22:30:20+00:00"
+        },
+        "workerID": "A2TAIEZVVTMZ7I"
+    },
+    "ja4mndwd05": {
+        "botSetup": {
+            "initialState": {
+                "belief": [
+                    1.5,
+                    1.5
+                ],
+                "isInvestee": false,
+                "metaParamsEstimations": {
+                    "alpha": [
+                        27.19990402046313,
+                        19.320787042060413,
+                        7.2167719797174135
+                    ],
+                    "discountFactor": 0.8,
+                    "lookAhead": {
+                        "estimated": 8,
+                        "prior": {
+                            "ps": [
+                                0.07142857142857142,
+                                0.14285714285714285,
+                                0.35714285714285715,
+                                0.35714285714285715,
+                                0.07142857142857142
+                            ],
+                            "vs": [
+                                0,
+                                1,
+                                2,
+                                3,
+                                4
+                            ]
+                        },
+                        "simplify": false
+                    }
+                },
+                "trust": 0.7000000000000001
+            },
+            "params": {
+                "goalCoeffs": [
+                    0.5,
+                    0.5
+                ],
+                "metaParams": {
+                    "alpha": 1000,
+                    "discountFactor": 0.8,
+                    "lookAhead": 2
+                },
+                "usesHeuristics": true
+            }
+        },
+        "comprehension": [
+            363,
+            -111
+        ],
+        "condition": {
+            "botCoeffs": 1,
+            "horizonDisclosed": false,
+            "prior": true,
+            "role": "investee"
+        },
+        "demographic": {
+            "age": 2,
+            "education": 2,
+            "gender": 2,
+            "robot": 3
+        },
+        "gameSetup": {
+            "endowments": {
+                "investee": 0,
+                "investor": 4
+            },
+            "horizon": 7,
+            "k": 2,
+            "role": "investee",
+            "unitToDollarRatio": 20
+        },
+        "preQuestionnaire": {
+            "altruism": 3,
+            "lottery1": 2,
+            "lottery2": 0,
+            "lottery3": 1,
+            "moneyRequest": 12,
+            "trust": 4
+        },
+        "timestamps": {
+            "comprehension": [
+                "2021-10-07 01:52:41+00:00",
+                "2021-10-07 01:52:42+00:00"
+            ],
+            "gotSetup": "2021-10-07 01:52:17+00:00"
+        }
+    },
+    "jv24ny2651": {
+        "approved": "2021-10-06 22:14:52+00:00",
+        "bonus": "Sent successfully",
+        "botSetup": {
+            "initialState": {
+                "belief": [
+                    1.75,
+                    1.25
+                ],
+                "isInvestee": false,
+                "metaParamsEstimations": {
+                    "alpha": [
+                        15.525880763533939,
+                        28.457755992301472,
+                        56.80730580459246
+                    ],
+                    "discountFactor": 0.8,
+                    "lookAhead": {
+                        "estimated": 0,
+                        "prior": {
+                            "ps": [
+                                0.07142857142857142,
+                                0.14285714285714285,
+                                0.35714285714285715,
+                                0.35714285714285715,
+                                0.07142857142857142
+                            ],
+                            "vs": [
+                                0,
+                                1,
+                                2,
+                                3,
+                                4
+                            ]
+                        },
+                        "simplify": false
+                    }
+                },
+                "trust": 0.5000000000000001
+            },
+            "params": {
+                "goalCoeffs": [
+                    0.8,
+                    0.2
+                ],
+                "metaParams": {
+                    "alpha": 1000,
+                    "discountFactor": 0.8,
+                    "lookAhead": 2
+                },
+                "usesHeuristics": true
+            }
+        },
+        "comprehension": [
+            684
+        ],
+        "condition": {
+            "botCoeffs": 2,
+            "horizonDisclosed": true,
+            "prior": true,
+            "role": "investee"
+        },
+        "demographic": {
+            "age": 2,
+            "education": 1,
+            "gender": 2,
+            "robot": 1
+        },
+        "earned": 14,
+        "feedback": "My plan mostly worked, I wanted to gain it's trust by always returning an investment and slowly build until the final round, then return nothing. ",
+        "gameSetup": {
+            "endowments": {
+                "investee": 0,
+                "investor": 4
+            },
+            "horizon": 7,
+            "k": 2,
+            "role": "investee",
+            "unitToDollarRatio": 20
+        },
+        "history": [
+            {
+                "invested": 1,
+                "returned": 1,
+                "took": 15
+            },
+            {
+                "invested": 2,
+                "returned": 2,
+                "took": 19
+            },
+            {
+                "invested": 1,
+                "returned": 1,
+                "took": 17
+            },
+            {
+                "invested": 1,
+                "returned": 2,
+                "took": 25
+            },
+            {
+                "invested": 1,
+                "returned": 2,
+                "took": 25
+            },
+            {
+                "invested": 3,
+                "returned": 4,
+                "took": 25
+            },
+            {
+                "invested": 4,
+                "returned": 0,
+                "took": 16
+            }
+        ],
+        "postQuestionnaire": {
+            "human": 3,
+            "trustChange": 1,
+            "trustChangeGeneral": 1
+        },
+        "preQuestionnaire": {
+            "altruism": 2,
+            "lottery1": 0,
+            "lottery2": 1,
+            "lottery3": 2,
+            "moneyRequest": 20,
+            "trust": 3
+        },
+        "requestToken": "efp3hcfrnrw969lu3gul",
+        "timestamps": {
+            "comprehension": [
+                "2021-10-06 22:06:45+00:00"
+            ],
+            "finished": "2021-10-06 22:10:55+00:00",
+            "gotSetup": "2021-10-06 22:05:01+00:00"
+        },
+        "workerID": "A1LB8HVSXK66U0"
+    },
+    "lotzdo7shv": {
+        "botSetup": {
+            "initialState": {
+                "belief": [
+                    1,
+                    1
+                ],
+                "isInvestee": false,
+                "metaParamsEstimations": {
+                    "alpha": [
+                        23.042758873604996,
+                        41.35828745090541,
+                        35.738336075009315
+                    ],
+                    "discountFactor": 0.8,
+                    "lookAhead": {
+                        "prior": {
+                            "ps": [
+                                0.07142857142857142,
+                                0.14285714285714285,
+                                0.35714285714285715,
+                                0.35714285714285715,
+                                0.07142857142857142
+                            ],
+                            "vs": [
+                                0,
+                                1,
+                                2,
+                                3,
+                                4
+                            ]
+                        },
+                        "simplify": false
+                    }
+                },
+                "trust": 0.5
+            },
+            "params": {
+                "goalCoeffs": [
+                    0.5,
+                    0.5
+                ],
+                "metaParams": {
+                    "alpha": 1000,
+                    "discountFactor": 0.8,
+                    "lookAhead": 2
+                },
+                "usesHeuristics": true
+            }
+        },
+        "comprehension": [
+            383,
+            384
+        ],
+        "condition": {
+            "botCoeffs": 1,
+            "horizonDisclosed": false,
+            "prior": false,
+            "role": "investee"
+        },
+        "demographic": {
+            "age": 1,
+            "education": 1,
+            "gender": 2,
+            "robot": 3
+        },
+        "gameSetup": {
+            "endowments": {
+                "investee": 0,
+                "investor": 4
+            },
+            "horizon": 7,
+            "k": 2,
+            "role": "investee",
+            "unitToDollarRatio": 20
+        },
+        "preQuestionnaire": {
+            "altruism": 5,
+            "lottery1": 2,
+            "lottery2": 2,
+            "lottery3": 2,
+            "moneyRequest": 11,
+            "trust": 5
+        },
+        "timestamps": {
+            "comprehension": [
+                "2021-10-06 23:23:02+00:00",
+                "2021-10-06 23:23:58+00:00"
+            ],
+            "gotSetup": "2021-10-06 23:22:11+00:00"
+        }
+    },
+    "mxhabqavda": {
+        "botSetup": {
+            "initialState": {
+                "belief": [
+                    1,
+                    1
+                ],
+                "isInvestee": true,
+                "metaParamsEstimations": {
+                    "alpha": [
+                        32
+                    ],
+                    "discountFactor": 0.8,
+                    "lookAhead": {
+                        "prior": {
+                            "ps": [
+                                0.07142857142857142,
+                                0.14285714285714285,
+                                0.35714285714285715,
+                                0.35714285714285715,
+                                0.07142857142857142
+                            ],
+                            "vs": [
+                                0,
+                                1,
+                                2,
+                                3,
+                                4
+                            ]
+                        },
+                        "simplify": true
+                    }
+                },
+                "trust": 0.5
+            },
+            "params": {
+                "goalCoeffs": [
+                    0.3,
+                    0.7
+                ],
+                "metaParams": {
+                    "alpha": 1000,
+                    "discountFactor": 0.8,
+                    "lookAhead": 4
+                },
+                "usesHeuristics": true
+            }
+        },
+        "comprehension": [
+            683,
+            684
+        ],
+        "condition": {
+            "botCoeffs": 0,
+            "horizonDisclosed": false,
+            "prior": false,
+            "role": "investor"
+        },
+        "demographic": {
+            "age": 3,
+            "education": 1,
+            "gender": 2,
+            "robot": 1
+        },
+        "earned": 31,
+        "feedback": "",
+        "gameSetup": {
+            "endowments": {
+                "investee": 0,
+                "investor": 4
+            },
+            "horizon": 7,
+            "k": 2,
+            "role": "investor",
+            "unitToDollarRatio": 20
+        },
+        "history": [
+            {
+                "invested": 3,
+                "returned": 4,
+                "took": 19
+            },
+            {
+                "invested": 3,
+                "returned": 4,
+                "took": 21
+            },
+            {
+                "invested": 4,
+                "returned": 5,
+                "took": 24
+            },
+            {
+                "invested": 3,
+                "returned": 3,
+                "took": 23
+            },
+            {
+                "invested": 4,
+                "returned": 4,
+                "took": 29
+            },
+            {
+                "invested": 4,
+                "returned": 4,
+                "took": 31
+            },
+            {
+                "invested": 4,
+                "returned": 4,
+                "took": 40
+            }
+        ],
+        "postQuestionnaire": {
+            "human": 5,
+            "trustChange": 1,
+            "trustChangeGeneral": 1
+        },
+        "preQuestionnaire": {
+            "altruism": 1,
+            "lottery1": 0,
+            "lottery2": 2,
+            "lottery3": 0,
+            "moneyRequest": 14,
+            "trust": 4
+        },
+        "requestToken": "cgib12lunog55g6swom8",
+        "timestamps": {
+            "comprehension": [
+                "2021-10-06 21:47:19+00:00",
+                "2021-10-06 21:48:03+00:00"
+            ],
+            "finished": "2021-10-06 21:53:17+00:00",
+            "gotSetup": "2021-10-06 21:45:07+00:00"
+        }
+    },
+    "nvbvzkpw7j": {
+        "approved": "2021-10-06 23:39:52+00:00",
+        "bonus": "Sent successfully",
+        "botSetup": {
+            "initialState": {
+                "belief": [
+                    2,
+                    1
+                ],
+                "isInvestee": true,
+                "metaParamsEstimations": {
+                    "alpha": [
+                        20
+                    ],
+                    "discountFactor": 0.8,
+                    "lookAhead": {
+                        "estimated": 6,
+                        "prior": {
+                            "ps": [
+                                0.07142857142857142,
+                                0.14285714285714285,
+                                0.35714285714285715,
+                                0.35714285714285715,
+                                0.07142857142857142
+                            ],
+                            "vs": [
+                                0,
+                                1,
+                                2,
+                                3,
+                                4
+                            ]
+                        },
+                        "simplify": true
+                    }
+                },
+                "trust": 0.5000000000000001
+            },
+            "params": {
+                "goalCoeffs": [
+                    0.8,
+                    0.2
+                ],
+                "metaParams": {
+                    "alpha": 1000,
+                    "discountFactor": 0.8,
+                    "lookAhead": 4
+                },
+                "usesHeuristics": true
+            }
+        },
+        "comprehension": [
+            684
+        ],
+        "condition": {
+            "botCoeffs": 2,
+            "horizonDisclosed": true,
+            "prior": true,
+            "role": "investor"
+        },
+        "demographic": {
+            "age": 2,
+            "education": 0,
+            "gender": 2,
+            "robot": 1
+        },
+        "earned": 20,
+        "feedback": "",
+        "gameSetup": {
+            "endowments": {
+                "investee": 0,
+                "investor": 4
+            },
+            "horizon": 7,
+            "k": 2,
+            "role": "investor",
+            "unitToDollarRatio": 20
+        },
+        "history": [
+            {
+                "invested": 4,
+                "returned": 0,
+                "took": 28
+            },
+            {
+                "invested": 4,
+                "returned": 0,
+                "took": 22
+            },
+            {
+                "invested": 0,
+                "returned": 0,
+                "took": 26
+            },
+            {
+                "invested": 0,
+                "returned": 0,
+                "took": 15
+            },
+            {
+                "invested": 0,
+                "returned": 0,
+                "took": 25
+            },
+            {
+                "invested": 0,
+                "returned": 0,
+                "took": 14
+            },
+            {
+                "invested": 0,
+                "returned": 0,
+                "took": 24
+            }
+        ],
+        "postQuestionnaire": {
+            "human": 1,
+            "trustChange": 0,
+            "trustChangeGeneral": 0
+        },
+        "preQuestionnaire": {
+            "altruism": 1,
+            "lottery1": 0,
+            "lottery2": 0,
+            "lottery3": 2,
+            "moneyRequest": 14,
+            "trust": 3
+        },
+        "requestToken": "shqcb8z3ptbidbg6iio7",
+        "timestamps": {
+            "comprehension": [
+                "2021-10-06 23:31:44+00:00"
+            ],
+            "finished": "2021-10-06 23:35:50+00:00",
+            "gotSetup": "2021-10-06 23:30:54+00:00"
+        },
+        "workerID": "A2VFEDAK5C1E1O"
+    },
+    "pb8u7b9300": {
+        "approved": "2021-10-07 00:49:52+00:00",
+        "bonus": "Sent successfully",
+        "botSetup": {
+            "initialState": {
+                "belief": [
+                    2,
+                    1
+                ],
+                "isInvestee": false,
+                "metaParamsEstimations": {
+                    "alpha": [
+                        36.70530531399238,
+                        53.372985265259196,
+                        44.10900067604376
+                    ],
+                    "discountFactor": 0.8,
+                    "lookAhead": {
+                        "estimated": 6,
+                        "prior": {
+                            "ps": [
+                                0.07142857142857142,
+                                0.14285714285714285,
+                                0.35714285714285715,
+                                0.35714285714285715,
+                                0.07142857142857142
+                            ],
+                            "vs": [
+                                0,
+                                1,
+                                2,
+                                3,
+                                4
+                            ]
+                        },
+                        "simplify": false
+                    }
+                },
+                "trust": 0.5000000000000001
+            },
+            "params": {
+                "goalCoeffs": [
+                    0.3,
+                    0.7
+                ],
+                "metaParams": {
+                    "alpha": 1000,
+                    "discountFactor": 0.8,
+                    "lookAhead": 2
+                },
+                "usesHeuristics": true
+            }
+        },
+        "comprehension": [
+            684
+        ],
+        "condition": {
+            "botCoeffs": 0,
+            "horizonDisclosed": true,
+            "prior": true,
+            "role": "investee"
+        },
+        "demographic": {
+            "age": 2,
+            "education": 4,
+            "gender": 1,
+            "robot": 0
+        },
+        "earned": 17,
+        "feedback": "",
+        "gameSetup": {
+            "endowments": {
+                "investee": 0,
+                "investor": 4
+            },
+            "horizon": 7,
+            "k": 2,
+            "role": "investee",
+            "unitToDollarRatio": 20
+        },
+        "history": [
+            {
+                "invested": 4,
+                "returned": 0,
+                "took": 14
+            },
+            {
+                "invested": 2,
+                "returned": 1,
+                "took": 20
+            },
+            {
+                "invested": 2,
+                "returned": 2,
+                "took": 28
+            },
+            {
+                "invested": 1,
+                "returned": 0,
+                "took": 16
+            },
+            {
+                "invested": 1,
+                "returned": 0,
+                "took": 22
+            },
+            {
+                "invested": 0,
+                "returned": 0,
+                "took": 16
+            },
+            {
+                "invested": 2,
+                "returned": 4,
+                "took": 13
+            }
+        ],
+        "postQuestionnaire": {
+            "human": 4,
+            "trustChange": 2,
+            "trustChangeGeneral": 2
+        },
+        "preQuestionnaire": {
+            "altruism": 1,
+            "lottery1": 0,
+            "lottery2": 2,
+            "lottery3": 2,
+            "moneyRequest": 14,
+            "trust": 3
+        },
+        "requestToken": "otbxsp2jo8q5zsye7h15",
+        "timestamps": {
+            "comprehension": [
+                "2021-10-07 00:42:56+00:00"
+            ],
+            "finished": "2021-10-07 00:46:44+00:00",
+            "gotSetup": "2021-10-07 00:41:31+00:00"
+        },
+        "workerID": "AMV1E7FFPVAW4"
+    },
+    "xdfun739i0": {
+        "botSetup": {
+            "initialState": {
+                "belief": [
+                    1,
+                    1
+                ],
+                "isInvestee": true,
+                "metaParamsEstimations": {
+                    "alpha": [
+                        32
+                    ],
+                    "discountFactor": 0.8,
+                    "lookAhead": {
+                        "prior": {
+                            "ps": [
+                                0.07142857142857142,
+                                0.14285714285714285,
+                                0.35714285714285715,
+                                0.35714285714285715,
+                                0.07142857142857142
+                            ],
+                            "vs": [
+                                0,
+                                1,
+                                2,
+                                3,
+                                4
+                            ]
+                        },
+                        "simplify": true
+                    }
+                },
+                "trust": 0.5
+            },
+            "params": {
+                "goalCoeffs": [
+                    0.8,
+                    0.2
+                ],
+                "metaParams": {
+                    "alpha": 1000,
+                    "discountFactor": 0.8,
+                    "lookAhead": 4
+                },
+                "usesHeuristics": true
+            }
+        },
+        "comprehension": [
+            363,
+            603
+        ],
+        "condition": {
+            "botCoeffs": 2,
+            "horizonDisclosed": false,
+            "prior": false,
+            "role": "investor"
+        },
+        "demographic": {
+            "age": 1,
+            "education": 1,
+            "gender": 2,
+            "robot": 3
+        },
+        "gameSetup": {
+            "endowments": {
+                "investee": 0,
+                "investor": 4
+            },
+            "horizon": 7,
+            "k": 2,
+            "role": "investor",
+            "unitToDollarRatio": 20
+        },
+        "preQuestionnaire": {
+            "altruism": 4,
+            "lottery1": 2,
+            "lottery2": 0,
+            "lottery3": 2,
+            "moneyRequest": 20,
+            "trust": 5
+        },
+        "timestamps": {
+            "comprehension": [
+                "2021-10-06 23:30:37+00:00",
+                "2021-10-06 23:34:35+00:00"
+            ],
+            "gotSetup": "2021-10-06 23:27:12+00:00"
+        }
+    },
+    "zvcb1pt9s0": {
+        "botSetup": {
+            "initialState": {
+                "belief": [
+                    1.25,
+                    1.75
+                ],
+                "isInvestee": true,
+                "metaParamsEstimations": {
+                    "alpha": [
+                        0
+                    ],
+                    "discountFactor": 0.8,
+                    "lookAhead": {
+                        "estimated": 0,
+                        "prior": {
+                            "ps": [
+                                0.07142857142857142,
+                                0.14285714285714285,
+                                0.35714285714285715,
+                                0.35714285714285715,
+                                0.07142857142857142
+                            ],
+                            "vs": [
+                                0,
+                                1,
+                                2,
+                                3,
+                                4
+                            ]
+                        },
+                        "simplify": true
+                    }
+                },
+                "trust": 0.5000000000000001
+            },
+            "params": {
+                "goalCoeffs": [
+                    0.3,
+                    0.7
+                ],
+                "metaParams": {
+                    "alpha": 1000,
+                    "discountFactor": 0.8,
+                    "lookAhead": 4
+                },
+                "usesHeuristics": true
+            }
+        },
+        "comprehension": [
+            364,
+            344
+        ],
+        "condition": {
+            "botCoeffs": 0,
+            "horizonDisclosed": true,
+            "prior": true,
+            "role": "investor"
+        },
+        "demographic": {
+            "age": 1,
+            "education": 1,
+            "gender": 2,
+            "robot": 1
+        },
+        "gameSetup": {
+            "endowments": {
+                "investee": 0,
+                "investor": 4
+            },
+            "horizon": 7,
+            "k": 2,
+            "role": "investor",
+            "unitToDollarRatio": 20
+        },
+        "preQuestionnaire": {
+            "altruism": 4,
+            "lottery1": 1,
+            "lottery2": 1,
+            "lottery3": 0,
+            "moneyRequest": 20,
+            "trust": 3
+        },
+        "timestamps": {
+            "comprehension": [
+                "2021-10-06 22:27:15+00:00",
+                "2021-10-06 22:27:26+00:00"
+            ],
+            "gotSetup": "2021-10-06 22:26:56+00:00"
+        }
+    }
+}
