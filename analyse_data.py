@@ -79,6 +79,7 @@ if WRITE_FILE:
 completed_plays = get_data(HIT_ID, DATA_FILENAME, DATA_SOURCE)
 PRINT_SUMMARIES and print('Here is a summary of completed plays:')
 feedbacks = {}
+preds_evals = {}
 # iterate over approved plays
 for user_id, play_dict in completed_plays.items():
     # play_dict = full_play.to_dict()
@@ -127,6 +128,7 @@ for user_id, play_dict in completed_plays.items():
         'uniform': pred_eval.evaluate_uniform_predictor(history, role),
         'dang': pred_eval.evaluate_dang_predictor(history, role)
     }
+    preds_evals[user_id] = evals
 
     # 4. generate a line of output csv file (if needed).
     if WRITE_FILE:
@@ -206,7 +208,7 @@ print('Here are some descriptive statistics:')
 counter = 1
 
 # 1. How does last return differ between horizon conditions
-fig = plt.figure(figsize=(10, 7))
+# fig = plt.figure(figsize=(10, 7))
 data = []
 print(f'{counter}. '
       'First, we analyse how the proportion of last return of a participant '
@@ -223,37 +225,11 @@ for horizon_cond in ['disclosed', 'undisclosed']:
     data.append(return_props)
 
 # Creating plot
-plt.boxplot(data)
+# plt.boxplot(data)
 # show plot
-plt.show()
+# plt.show()
 
-
-# disclosed_stats = data_desc.describe_last_return_prop(
-#     plays_by_horizon['disclosed'])
-# undisclosed_stats = data_desc.describe_last_return_prop(
-#     plays_by_horizon['undisclosed'])
-#
-# disclosed_desc = 'no data' if 'error' in disclosed_stats else \
-#     f'mean={disclosed_stats.get("mean")}, stdev={disclosed_stats.get("stdev")}'
-# undisclosed_desc = 'no data' if 'error' in undisclosed_stats else \
-#     f'mean={undisclosed_stats.get("mean")}, stdev={undisclosed_stats.get("stdev")}'
-#
-#
-# print(f'Return proportion when horizon disclosed (based on '
-#       f'{disclosed_stats["size"]} participants): {disclosed_desc}')
-# print(f'Return proportion when horizon undisclosed (based on '
-#       f'{undisclosed_stats["size"]} participants): {undisclosed_desc}')
 counter += 1
-# base_play_info = {
-#     'history': history,
-#     'role': role,
-#     'fairness': fairness,
-#     'total_welfare': socialWelfare,
-#     'humanness': humanness,
-#     'trust_specific': trust_change_specific,
-#     'trust_general': trust_change_general
-# }
-
 # 2. how do game outcomes, trust changes and perceived
 # humanness depend on bot character?
 print(f'\n{counter}. '
@@ -277,30 +253,27 @@ print('- humanness is measured on a scale 1 to 5 (only integers) where 5 '
 print('- trust changes are measured on a \'ternary\' scale {-1,0,1} where '
       '-1 = trust decrease, 0 = no change, 1 = trust increase')
 
+# fig = plt.figure(figsize=(15, 3))
+outcome_vars = ['fairness', 'total_welfare',
+                'humanness', 'trust_specific', 'trust_general']
+data = {var: [] for var in outcome_vars}
 for character in ['selfless', 'neutral', 'greedy']:
     plays = plays_by_bot_character.get(character)
-    fair_desc = aux.describe(
-        [play.get('fairness') for play in plays])
-    welfare_desc = aux.describe(
-        [play.get('total_welfare') for play in plays])
-    humanness_desc = aux.describe(
-        [play.get('humanness') for play in plays])
-    trust_bot_desc = aux.describe(
-        [play.get('trust_specific') for play in plays])
-    trust_general_desc = aux.describe(
-        [play.get('trust_general') for play in plays])
     print(f'\n{character} bot (based on {len(plays)} participants):\n' +
-          '\t            mean | stdev\n'
-          f'\t fairness: {fair_desc["mean"]:+.2f} | '
-          f'{fair_desc["stdev"]:.2f}\n'
-          f'\t  welfare: {welfare_desc["mean"]:.2f} | '
-          f'{welfare_desc["stdev"]:.2f}\n'
-          f'\thumanness:  {humanness_desc["mean"]:.2f} | '
-          f'{humanness_desc["stdev"]:.2f}\n'
-          f'\ttrust bot: {trust_bot_desc["mean"]:+.2f} | '
-          f'{trust_bot_desc["stdev"]:.2f}\n'
-          f'\ttrust all: {trust_general_desc["mean"]:+.2f} | '
-          f'{trust_general_desc["stdev"]:.2f}\n')
+          '\t            mean | stdev\n')
+    for outcome_var in outcome_vars:
+        values = [play.get(outcome_var) for play in plays]
+        desc = aux.describe(values)
+        print(f'\t {outcome_var}: {desc["mean"]:+.2f} | '
+              f'{desc["stdev"]:.2f}\n')
+        data[outcome_var].append(values)
+
+# for index, var in enumerate(outcome_vars):
+#     plt.subplot(1, 5, index+1)
+#     plt.gca().set_title(var)
+#     plt.boxplot(data[var], labels=['selfless', 'neutral', 'greedy'])
+# show plot
+# plt.show()
 counter += 1
 
 print(f'\n{counter}. '
@@ -321,3 +294,28 @@ for user_id, feedback in feedbacks.items():
     print(feedback)
 
 # 5. analyse how participants answer pre game questions
+
+# 6. compare evaluations
+fig = plt.figure(figsize=(9, 3))
+
+# evals = {
+#     'csmg': {
+#         'pmse': stats.mean(csmg_evals.get('pmses')),
+#         'mse': stats.mean(csmg_evals.get('mses')),
+#         'fse': stats.mean(csmg_evals.get('fses'))
+#     },
+#     'uniform': pred_eval.evaluate_uniform_predictor(history, role),
+#     'dang': pred_eval.evaluate_dang_predictor(history, role)
+# }
+
+data = {}
+for index, metric in enumerate(['pmse', 'mse', 'fse']):
+    data[metric] = []
+    for predictor in ['csmg', 'dang', 'uniform']:
+        data[metric].append([pred_eval[predictor][metric]
+                             for pred_eval in preds_evals.values()])
+    plt.subplot(1, 3, index+1)
+    plt.gca().set_title(metric)
+    plt.boxplot(data[metric], labels=['our model', 'dang', 'uniform'])
+
+plt.show()

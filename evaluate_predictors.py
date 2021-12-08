@@ -46,7 +46,7 @@ def evaluate_dang_predictor(history, role):
         'trust_value': 0.5,
         'evals': []
     }
-
+    print(role)
     def f(acc, transfers):
         invested = transfers['invested']
         returned = transfers['returned']
@@ -76,7 +76,8 @@ def evaluate_dang_predictor(history, role):
         trust_value = expect_trust * change_rate  # eq (11)
         # evaluate prediction; predicted action is a proportion of max
         # transfer equal to trust value
-        predicted_action = trust_value * max_sending_amount
+        predicted_action = acc['trust_value'] * max_sending_amount
+        print(f'round={len(acc["evals"])}: predicted: {predicted_action}, actual: {sending_amount}')
         pred_eval = pow(predicted_action - sending_amount, 2)
         return {
             'alpha': alpha,
@@ -90,8 +91,8 @@ def evaluate_dang_predictor(history, role):
             'trust_value': trust_value,
             'evals': acc['evals'] + [pred_eval]
         }
-
     evals = reduce(f, history, init_acc)['evals']
+    print(evals)
     fse = stats.mean(evals)
     return {
         'mse': fse,
