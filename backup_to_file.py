@@ -2,7 +2,7 @@ from google.cloud import firestore
 import json
 
 hit_id = u'3HJ1EVZS3T8TBOSXTPWY3UWPO5NR34evals'
-output_file = 'firstStudyBackupEvals.json'
+output_file = 'data/firstStudyBackupEvals.json'
 
 # STEP 1: retrieve plays from the database
 db = firestore.Client()

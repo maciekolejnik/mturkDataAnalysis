@@ -2,6 +2,10 @@ amt-trust-game-cred-prod.json
 
 *.csv
 
+plots
+
+.DS_Store
+
 env
 
 .idea

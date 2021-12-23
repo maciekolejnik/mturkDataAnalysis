@@ -1,3 +1,6 @@
+# this file retrieves various auxiliary data from our experiment
+# we analyse things like timings
+
 import statistics as stats
 import auxiliary as aux
 import evaluate_predictors as pred_eval
@@ -5,15 +8,14 @@ import data_description as data_desc
 import re
 import matplotlib.pyplot as plt
 
-from retrieve_data import DataSource, get_data, get_evals
+from retrieve_data import read_data_from_file, read_evals_from_file
 
 # 'ARGUMENTS' (should be passed on cmd line but oh well)
 PRINT_SUMMARIES = False
-WRITE_FILE = False
-HIT_ID = u'3HJ1EVZS3T8TBOSXTPWY3UWPO5NR34'
-DATA_FILENAME = 'firstStudyBackup.json'
-EVALS_FILENAME = 'firstStudyBackupEvals.json'
-DATA_SOURCE = DataSource.FILE
+PRINT_FEEDBACKS = False
+# WRITE_FILE = False
+DATA_FILENAME = 'data/firstStudyBackup.json'
+EVALS_FILENAME = 'data/firstStudyBackupEvals.json'
 
 # STEP 1a: we create lists to categorise data for different TREATMENTS
 # the FACTORS are as follows:
@@ -76,7 +78,8 @@ if WRITE_FILE:
 # STEP 2
 # iterate over useful plays, print a summary of each
 # and generate output CSV files in the meantime
-completed_plays = get_data(HIT_ID, DATA_FILENAME, DATA_SOURCE)
+# completed_plays = get_data(HIT_ID, DATA_FILENAME, DATA_SOURCE)
+completed_plays = read_data_from_file(DATA_FILENAME)
 PRINT_SUMMARIES and print('Here is a summary of completed plays:')
 feedbacks = {}
 preds_evals = {}
@@ -85,12 +88,12 @@ for user_id, play_dict in completed_plays.items():
     # play_dict = full_play.to_dict()
     # user_id = full_play.id
     # 1. retrieve top level stuff for easier access
-    condition = play_dict.get('condition')
-    bot_setup = play_dict.get('botSetup')
-    pre_questionnaire = play_dict.get('preQuestionnaire')
-    post_questionnaire = play_dict.get('postQuestionnaire')
-    history = play_dict.get('history')
-    earned = play_dict.get("earned")
+    condition = play_dict['condition']
+    bot_setup = play_dict['botSetup']
+    pre_questionnaire = play_dict['preQuestionnaire']
+    post_questionnaire = play_dict['postQuestionnaire']
+    history = play_dict['history']
+    earned = play_dict['earned']
     feedback = play_dict['feedback']
 
     # 2. retrieve some lower level stuff
@@ -116,7 +119,8 @@ for user_id, play_dict in completed_plays.items():
         "trustSpecific") - 1  # -1-1 where -1=decreased
     # 4b. predictions
     # get evaluations computed in webppl for our predictor
-    pred_evaluations = get_evals(HIT_ID, EVALS_FILENAME, DATA_SOURCE)
+    # pred_evaluations = get_evals(HIT_ID, EVALS_FILENAME, DATA_SOURCE)
+    pred_evaluations = read_evals_from_file(EVALS_FILENAME)
     # as a dict { user_id : { 'predictions' : {'fses': [list], 'pmses': [list], 'mses': [list]}}
     csmg_evals = pred_evaluations.get(user_id).get('predictions')
     evals = {
