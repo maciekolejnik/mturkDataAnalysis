@@ -19,7 +19,7 @@ NCOLS = 10
 # - preQ time series - timing of the events above (same length as events)
 def report(answers_df, timings_df):
     # report results to 11-20 game
-    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(8, 8))
+    fig, ax = plt.subplots()
     counts = answers_df['money request'].value_counts().sort_index()
     print(counts)
     x = counts.index
@@ -35,7 +35,7 @@ def report(answers_df, timings_df):
     expected = pd.Series(expected_pc) * (8/10)
     ax.bar(x, expected, alpha=0.5, width=0.4, fill=False, hatch='//', label='expected [Arad]')
     ax.legend(loc='upper left')
-    fig.savefig(FILENAME_MONEY_REQ, transparent=False, dpi=80, bbox_inches="tight")
+    fig.savefig(FILENAME_MONEY_REQ, transparent=False, dpi=300, bbox_inches="tight")
     print(f'11-20 money request plots saved to {FILENAME_MONEY_REQ}')
 
     # plot time series
@@ -98,7 +98,7 @@ def report(answers_df, timings_df):
     ax.set_yticks(ticks=[])
     x = np.random.normal(1, 0.08, size=len(pruned))
     ax.scatter(x=pruned, y=x, c='y', alpha=0.2)
-    fig.savefig('plots/preQ_times.png', transparent=False, dpi=80, bbox_inches="tight")
+    fig.savefig('plots/preQ_times.png', transparent=False, dpi=300, bbox_inches="tight")
 
     # analyse time spend on Q1 as prop of total
     print('time spend on Q1 as prop of total')
@@ -111,4 +111,4 @@ def report(answers_df, timings_df):
     ax.set_yticks(ticks=[])
     x = np.random.normal(1, 0.08, size=len(time_props))
     ax.scatter(x=time_props, y=x, c='y', alpha=0.2)
-    fig.savefig('plots/preQ_time_props.png', transparent=False, dpi=80, bbox_inches="tight")
+    fig.savefig('plots/preQ_time_props.png', transparent=False, dpi=300, bbox_inches="tight")

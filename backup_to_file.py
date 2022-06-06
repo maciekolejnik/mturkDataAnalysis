@@ -1,3 +1,6 @@
+# This file reads a collection identified by hit_id in Firestore
+# database and writes all the data to a json file output_file
+
 from google.cloud import firestore
 import json
 

@@ -19,7 +19,7 @@ import re
 
 DATA_FILENAME = 'data/firstStudyBackup.json'
 EVALS_FILENAME = 'data/firstStudyBackupEvals.json'
-PRINT_FEEDBACKS = True
+PRINT_FEEDBACKS = False
 WRITE_CSV = False
 REPORT_DEMOGRAPHICS = False
 REPORT_PRE_QUESTIONNAIRE = False
@@ -147,10 +147,11 @@ for user_id, play_dict in completed_plays.items():
         if len(trimmed) > 0 and \
                 (trimmed not in ['none', 'n', 'n/a', 'nope', 'no', 'no feedback']):
             bot_character = ["selfless", "neutral", "greedy"][bot_coeffs]
-            hor = 'disclosed' if horizon else 'undisclosed'
+            # hor = 'disclosed' if horizon else 'undisclosed'
             feedback_message = \
-                f'user {user_id} (played as {human_role} with {hor} horizon against ' \
+                f'user {user_id} (played as {human_role} with {horizon} horizon against ' \
                 f'{bot_character} bot):\n\t{feedback}'
+            # feedback_message = f'\\{human_role}Sc & \\{horizon}Horizon & \\{bot_character}Bot & {feedback} \\\\'
             feedbacks[user_id] = feedback_message
 
 WRITE_CSV and output_csv.close()

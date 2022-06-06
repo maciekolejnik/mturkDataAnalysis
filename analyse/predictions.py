@@ -7,7 +7,7 @@ from scipy.stats import wilcoxon, mannwhitneyu
 
 def report(df):
     # First compare all predictions globally
-    compare_all_predictors(df)
+    # compare_all_predictors(df)
 
     # now zoom in on how our model's predictions differ between
     # prior conditions
@@ -16,13 +16,17 @@ def report(df):
 
 def evaluate_our_predictor(df):
     filename = 'plots/preds-eval-priors.png'
-    fig, axs = plt.subplots(nrows=1, ncols=3, figsize=(24, 8))
+    # for multiple plots in one fig
+    # fig, axs = plt.subplots(nrows=1, ncols=3, figsize=(24, 8))
     priors = ['informed', 'uniform']
     prior_labels = ['ɪɴꜰᴏʀᴍᴇᴅ', 'ᴜɴɪꜰᴏʀᴍ']
     roles = ['investor', 'investee']
 
+    fig, ax = plt.subplots()
+    # ax = axs[0]
     df_by_prior = [df[df['prior'] == prior]['csmg'] for prior in priors]
-    aux.boxplot(df_by_prior, prior_labels, axs[0], 'all data', test_normal=False)
+    aux.boxplot(df_by_prior, prior_labels, ax, 'all data', test_normal=False)
+    fig.savefig('plots/preds/csmgPriorsAll.png', transparent=False, dpi=300, bbox_inches="tight")
     print('Testing our predictor on all data between various priors')
     print('Mann Whitney U rank test:')
     print(mannwhitneyu(df_by_prior[0], df_by_prior[1]))
@@ -36,10 +40,11 @@ def evaluate_our_predictor(df):
     # print('Testing our predictor on all data between various roles')
     # print(st.ttest_ind(*df_by_role))
 
+    fig, ax = plt.subplots()
     # restrict to data under undisclosed horizon
     undish = df.loc[lambda f: f['horizon'] == 'undisclosed']
     undisclosed_horizon_by_prior = [undish[undish['prior'] == prior]['csmg'] for prior in priors]
-    aux.boxplot(undisclosed_horizon_by_prior, prior_labels, axs[2], 'only undisclosed')
+    aux.boxplot(undisclosed_horizon_by_prior, prior_labels, ax, 'only undisclosed')
     print('Testing our predictor on undisclosed horizon data between various priors')
     print('Mann Whitney U rank test:')
     print(mannwhitneyu(undisclosed_horizon_by_prior[0], undisclosed_horizon_by_prior[1]))
@@ -47,7 +52,7 @@ def evaluate_our_predictor(df):
         print(f'{priors[i]}:')
         print(d.describe(percentiles=[.1, .18, .19, .2, .25, .5, .75]))
     # print(st.ttest_ind(*undisclosed_horizon_by_prior))
-    fig.savefig(filename, transparent=False, dpi=80, bbox_inches="tight")
+    fig.savefig('plots/preds/csmgPriorsUndisclosed.png', transparent=False, dpi=300, bbox_inches="tight")
     print(f'Saved plots for pred evals by prior to {filename}')
 
 
@@ -55,39 +60,39 @@ def compare_all_predictors(df):
     print('Comparing all predictors...')
     predictors = ['csmg', 'dang', 'uniform', 'avg', 'last']
     predictor_labels = ['ᴄsᴍɢ', 'ᴅᴀɴɢ', 'ᴜɴɪғᴏʀᴍ', 'ᴀᴠɢ', 'ʟᴀsᴛ']
-    filename = "plots/preds-eval-all.png"
-    fig, axs = plt.subplots(nrows=1, ncols=4, figsize=(32, 8))
-    for ax in axs:
-        ax.set_ylabel("MSE")
+    # filename = "plots/preds-eval-all.png"
+    # fig, axs = plt.subplots(nrows=1, ncols=4, figsize=(32, 8))
+    # for ax in axs:
+    #     ax.set_ylabel("MSE")
 
     data_subsets = {
-        'all': df,
-        'informed': df[df['prior'] == 'informed'],
-        'undisclosed': df[df['horizon'] == 'undisclosed'],
-        'informed + undisclosed': df[(df['horizon'] == 'undisclosed') & (df['prior'] == 'informed')]
+        'allData': df,
+        'informedPrior': df[df['prior'] == 'informed'],
+        'undisclosedHorizon': df[df['horizon'] == 'undisclosed'],
+        'informedAndUndisclosed': df[(df['horizon'] == 'undisclosed') & (df['prior'] == 'informed')]
     }
 
-    print(df[['bot role', 'horizon', 'prior', 'last transfer prop', 'csmg', 'dang', 'investments', 'returns']].sort_values(
-        by='csmg', ascending=False).head(20))
-    print(df[['bot role', 'horizon', 'prior', 'earned human', 'earned bot', 'investments', 'returns']].sort_values(
-        by='earned bot', ascending=True).head(20))
-    print(df[['bot role', 'horizon', 'prior', 'earned human', 'earned bot', 'investments', 'returns']].sort_values(
-        by='earned human', ascending=True).head(20))
-    print(df[(df['bot character'] == 'greedy')][['bot character','bot role', 'horizon', 'earned human',
-                'earned bot', 'investments', 'returns', 'feedback']].sort_values(
-        by='bot role', ascending=True).head(30))
-    print(df[(df['bot character'] == 'greedy') & (df['bot role'] == 'investee')][['bot character',
-            'bot role', 'horizon', 'earned human', 'earned bot', 'investments', 'returns']].sort_values(
-        by='bot role', ascending=True).describe())
-    print(df[['earned human', 'earned bot']].describe(percentiles=[.1,.25,.5, .75, .8,.85,.9,.95]))
-
-    print('investor earnings:')
-    print(pd.concat([df[df['bot role'] == 'investor']['earned bot'],
-                                       df[df['bot role'] == 'investee']['earned human']]).describe())
-    print('investee earnings:')
-    print(pd.concat([df[df['bot role'] == 'investor']['earned human'],
-                     df[df['bot role'] == 'investee']['earned bot']]).describe())
-    exit(1)
+    # print(df[['bot role', 'horizon', 'prior', 'last transfer prop', 'csmg', 'dang', 'investments', 'returns']].sort_values(
+    #     by='csmg', ascending=False).head(20))
+    # print(df[['bot role', 'horizon', 'prior', 'earned human', 'earned bot', 'investments', 'returns']].sort_values(
+    #     by='earned bot', ascending=True).head(20))
+    # print(df[['bot role', 'horizon', 'prior', 'earned human', 'earned bot', 'investments', 'returns']].sort_values(
+    #     by='earned human', ascending=True).head(20))
+    # print(df[(df['bot character'] == 'neutral')][['bot character','bot role', 'horizon', 'earned human',
+    #             'earned bot', 'investments', 'returns', 'feedback']].sort_values(
+    #     by='bot role', ascending=True).head(30))
+    # print(df[(df['bot character'] == 'greedy') & (df['bot role'] == 'investee')][['bot character',
+    #         'bot role', 'horizon', 'earned human', 'earned bot', 'investments', 'returns']].sort_values(
+    #     by='bot role', ascending=True).describe())
+    # print(df[['earned human', 'earned bot']].describe(percentiles=[.1,.25,.5, .75, .8,.85,.9,.95]))
+    #
+    # print('investor earnings:')
+    # print(pd.concat([df[df['bot role'] == 'investor']['earned bot'],
+    #                                    df[df['bot role'] == 'investee']['earned human']]).describe())
+    # print('investee earnings:')
+    # print(pd.concat([df[df['bot role'] == 'investor']['earned human'],
+    #                  df[df['bot role'] == 'investee']['earned bot']]).describe())
+    # exit(1)
 
     for i, (name, subset) in enumerate(data_subsets.items()):
         print(f'\n\nConsider {name} data'.upper())
@@ -95,13 +100,17 @@ def compare_all_predictors(df):
             print(f'Summary of {p} predictions:')
             print(subset[p].describe(percentiles=[.1, .25, .5, .75]))
         subset_by_predictor = [subset[predictor] for predictor in predictors]
-        aux.boxplot(subset_by_predictor, predictor_labels, axs[i], f'{name} data', test_normal=False)
+        fig, ax = plt.subplots()
+        ax.set_ylabel("MSE")
+        # ax = axs[i]
+        aux.boxplot(subset_by_predictor, predictor_labels, ax, f'{name} data', test_normal=False)
+        fig.savefig(f'plots/preds/{name}.png', transparent=False, dpi=300, bbox_inches="tight")
         for i,j in [(i, j) for i in range(5) for j in range(5) if i < j]:
             print(f'Comparing {predictors[i]} to {predictors[j]} using Wilcox test:')
             print(wilcoxon(subset_by_predictor[i], subset_by_predictor[j]))
 
-    fig.savefig(filename, transparent=False, dpi=80, bbox_inches="tight")
-    print(f'Saved plots for all pred evals to {filename}')
+    # fig.savefig(filename, transparent=False, dpi=80, bbox_inches="tight")
+    # print(f'Saved plots for all pred evals to {filename}')
 
     # 'competition'
     measures = 'mean', '50%', 'std'

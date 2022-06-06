@@ -20,4 +20,4 @@ def boxplot(data, labels, ax, title, test_normal=False, overlay_data=True):
         if overlay_data:
             x = np.random.normal(index + 1, 0.04, size=len(y))
             ax.scatter(x=x, y=y, c='y', alpha=0.2)
-    ax.set_title(title)
+    # ax.set_title(title)
